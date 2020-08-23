@@ -12,22 +12,35 @@ const app = express();
 
 app.set('view engine', 'ejs');
 
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 app.use(express.static("public"));
 
 
 
+//get request to home route, response is rendering the home.ejs file to be displayed
+//on the browser. because we've set app to identify that ejs files are within the view folder
+// it knows to look there and will serve up specified .ejs files.
+app.get("/", function(req, res) {
 
+  res.render("home", {homeParagraph: homeStartingContent});
 
+});
 
+//about page
+app.get("/about", function(req,res){
+  res.render("about", {homeParagraph: homeStartingContent});
+});
 
-
-
-
-
-
+//contact page
+app.get("/contact", function(req,res){
+  res.render("contact", {homeParagraph: homeStartingContent});
+});
 
 
 app.listen(3000, function() {
+
   console.log("Server started on port 3000");
+
 });
