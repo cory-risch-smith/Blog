@@ -21,7 +21,7 @@ app.use(express.static("public"));
 
 //get request to home route, response is rendering the home.ejs file to be displayed
 //on the browser. because we've set app to identify that ejs files are within the view folder
-// it knows to look there and will serve up specified .ejs files.
+//and will serve up specified .ejs files.
 app.get("/", function(req, res) {
 
   res.render("home", {homeParagraph: homeStartingContent});
