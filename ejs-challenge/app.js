@@ -28,16 +28,24 @@ app.get("/", function(req, res) {
 
 });
 
-//about page
+//About Page
 app.get("/about", function(req,res){
-  res.render("about", {homeParagraph: homeStartingContent});
+  res.render("about", {aboutParagraph: aboutContent});
 });
 
-//contact page
+//Contact Page
 app.get("/contact", function(req,res){
-  res.render("contact", {homeParagraph: homeStartingContent});
+  res.render("contact", {contactParagraph: contactContent});
 });
 
+//Compose Page
+app.get("/compose", function(req, res){
+  res.render("compose")
+});
+
+app.post("/compose", function(req, res){
+  console.log(req.body.entry1);
+});
 
 app.listen(3000, function() {
 

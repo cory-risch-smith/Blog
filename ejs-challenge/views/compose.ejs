@@ -1,0 +1,29 @@
+<!-- ejscomposepage-->
+
+<%- include("partials/header"); -%>
+
+<div class="compose_post">
+  <h1>Compose</h1>
+  <form action="/compose" method="post">
+    <h6>Title</h6>
+    <div class="form-group">
+      <input type="text" class="form-control" name="post-title" />
+    </div>
+
+    <h6>Post</h6>
+    <div class="form-group">
+      <textarea
+        class="form-control"
+        rows="5"
+        cols="30"
+        name="post-body"
+      ></textarea>
+    </div>
+
+    <button class="btn btn-primary" type="submit" name="publish">
+      Publish
+    </button>
+  </form>
+</div>
+
+<%- include("partials/footer"); -%>
